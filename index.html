@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f2ec">
+  <meta name="description" content="A quiet little world of tactile, satisfying moments.">
+  <link rel="icon" href="data:,">
+  <title>Satisfying World — a little moment of calm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app" id="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Satisfying World home"><span class="brand-mark">✳</span><span>SATISFYING <b>WORLD</b></span></a>
+      <div class="top-actions">
+        <button class="icon-button" id="soundToggle" aria-label="Mute sounds" title="Sound on"><span id="soundIcon">◖))</span></button>
+        <button class="icon-button record-button" id="recordToggle" aria-label="Toggle recording mode" title="Recording mode"><span class="record-dot"></span><span class="record-label">REC MODE</span></button>
+      </div>
+    </header>
+
+    <section class="intro">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR DAILY DOSE OF CALM</div>
+      <h1>A little moment<br><em>of satisfying.</em></h1>
+      <p>Pick a texture. Slow down. Play.</p>
+    </section>
+
+    <nav class="mode-list" id="modeList" aria-label="Choose a tactile world"></nav>
+
+    <section class="play-area" aria-label="Interactive game scene">
+      <div class="scene-head">
+        <div><span class="scene-kicker" id="sceneKicker">TEXTURE STUDIO · 01</span><h2 id="sceneTitle">Kinetic sand</h2></div>
+        <button class="round-button reset-button" id="resetButton" aria-label="Reset scene" title="Start fresh">↻</button>
+      </div>
+      <div class="canvas-wrap" id="canvasWrap">
+        <canvas id="scene" aria-label="Touch and drag to play"></canvas>
+        <div class="hint-pill" id="hint"><span class="hint-sparkle">✦</span><span id="hintText">Swipe gently to slice</span><span class="hint-arrow">↗</span></div>
+        <div class="scene-counter" id="sceneCounter">0 <span>cuts</span></div>
+        <div class="slow-chip" id="slowChip"><span>Ⅱ</span> SLOW MO</div>
+        <div class="toast" id="toast">Lovely.</div>
+      </div>
+      <div class="scene-footer">
+        <div class="progress-block"><div class="progress-label"><span id="progressText">YOUR SESSION</span><span id="progressValue">0%</span></div><div class="progress-track"><span id="progressBar"></span></div></div>
+        <button class="replay-button" id="replayButton"><span>↶</span> REPLAY</button>
+      </div>
+    </section>
+
+    <section class="tool-row">
+      <div class="gesture-note"><span class="gesture-icon" id="gestureIcon">↗</span><div><b id="gestureTitle">Swipe to slice</b><small id="gestureDetail">One finger is all you need</small></div></div>
+      <button class="slow-button" id="slowButton" aria-pressed="false"><span class="slow-glyph">Ⅱ</span><span><b>Slow motion</b><small>Take your time</small></span><span class="toggle"><i></i></span></button>
+    </section>
+
+    <section class="sound-panel">
+      <div class="sound-title"><div><span class="sound-icon">⌁</span><b>Sound, just the way you like it</b></div><button id="mixToggle" class="mix-toggle" aria-expanded="false">MIX <span>＋</span></button></div>
+      <div class="mix-controls" id="mixControls">
+        <label><span>Texture</span><input type="range" min="0" max="100" value="70" data-volume="texture"></label>
+        <label><span>Impacts</span><input type="range" min="0" max="100" value="52" data-volume="impact"></label>
+        <label><span>Water</span><input type="range" min="0" max="100" value="58" data-volume="water"></label>
+      </div>
+      <p>No music. Just the good sounds.</p>
+    </section>
+    <footer><span>MADE FOR SLOW MOMENTS</span><span>✳ &nbsp; TAKE A BREATH</span></footer>
+  </main>
+  <script src="game.js"></script>
+  <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('./service-worker.js').catch(() => {});</script>
+</body>
+</html>
